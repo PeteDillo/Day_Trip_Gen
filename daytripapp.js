@@ -1,3 +1,4 @@
+"Use strict"
 // arrays                   the strings will be known as items
 let desArray = ['California', 'New York', 'Texas', 'Washington', 'Florida', 'Madrid', 'Canada']
 let resArray = ['Chinese', 'Mexican', 'Sushi', 'Tex-Mex', 'Italian', 'Indian', 'Spanish']
@@ -6,10 +7,10 @@ let enteArray = ['Movie' , 'Musical' , 'Concert', 'Open Mic', 'Amusment Park']
 
 
 // these will be known as types I.E destination and transport
-destination = rndArray(desArray)
-restaurant = rndArray(resArray)
-transport = rndArray(transArray)
-entertainment = rndArray(enteArray)
+let destination = rndArray(desArray)
+let restaurant = rndArray(resArray)
+let transport = rndArray(transArray)
+let entertainment = rndArray(enteArray)
 
 
 start()

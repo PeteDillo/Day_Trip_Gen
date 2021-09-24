@@ -26,6 +26,7 @@ else if (changeYesNo === "N" || changeYesNo === "n" || changeYesNo === 'No' || c
 }
 else{
 alert('Error invaild Please insert either Yes or No. RESTARTING')
+start()
 }
 
 
@@ -39,7 +40,9 @@ function agreeCheck(agree, item, typeArray){
     if(agree ==='y' || agree === 'Y' ||agree === "yes" || agree === 'Yes'){   
         reSelector(item, typeArray)
     }
-
+    else if (agree === "N" || agree === "n" || agree === 'No' || agree ==='no'){
+        return item;
+    }
 }
 // function to run reselector 
 function reSelector(item, typeArray){
@@ -47,17 +50,16 @@ function reSelector(item, typeArray){
 
     if (agreeToChange === 'y' || agreeToChange === 'Y' ||agreeToChange === "yes" || agreeToChange === 'Yes' ){
         item = rndArray(typeArray)
-        agreeToChange = 'n'
         agreeToChange = prompt('Your choice of ' + item + ' has been saved. Would you like to change your choice?' )
 
-        if (agreeToChange==='y'){
+        if (agreeToChange === 'y' || agreeToChange === 'Y' ||agreeToChange === "yes" || agreeToChange === 'Yes'){
             reSelector(item, typeArray)
 
         }
         
     }
     else if (agree === "N" || agree === "n" || agree === 'No' || agree ==='no'){
-        return item
+        return item;
 }
     else{
     alert('Error invaild Please insert either Yes or No RESTARTING')

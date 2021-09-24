@@ -14,11 +14,16 @@ entertainment = rndArray(enteArray)
 changeYesNo = prompt("Your destination is "+ destination + ". You'll get there via " + transport + ". Eating a wonderful local " + restaurant + ' restaurant. After that enjoy a night enjoyinging a ' + entertainment + '. Do you want to change anything?')
 
 
-while(changeYesNo === 'Y' || "yes" || 'Yes' || 'y'){
-    changeYesNo = 'N' 
-}
+if(changeYesNo === 'Y' || "yes" || 'Yes' || 'y'){
+    let desAgree = agreeCheck(prompt("Do you want to change your destination?"), destination, desArray, )
 
-//  
+}
+//if else(changeYesNo ==="N" || "n" || 'No' || 'no'){}
+
+
+
+
+//  End Confirmation Alert
 alert("Your order for "+ destination + " via " + transport + ", dinning in at a " + restaurant + ' restaurant. and a ' + entertainment + ' is complete. Have a nice day!')
 
 // function for random array
@@ -27,18 +32,22 @@ function rndArray(Array){
     return Array[randomNumber]
 }
 //function to check if we like the random item
-function agreeCheck(agreeOrNot, item, array, type){
+function agreeCheck(item, array, type){
     agree = prompt("Do you want to change " + item + "?")
-    if(desAgree ==="N" || "n" || 'No' || 'no' ){   
+    if(agree ==='Y' || "yes" || 'Yes' || 'y' ){   
+        return agree
     }
-    else if (agreeOrNot === 'Y' || "yes" || 'Yes' || 'y'){
-        reSelector(type, array)
+    if else(agree !== 'Y' || "yes" || 'Yes' || 'y' || 'No' || 'no' || 'n'|| 'N'){
+        alert('Restart input not undersooned')
+    }
+    if else( agree === 'No' || 'no' || 'n'|| 'N' ){
+        console.log(item + ' has been saved.')
     }
 }
 // function to run reselector 
 function reSelector(item, type, typeArray){
     let agreeToChange = "Y"
-    while(agreeToChange !== "N" || "n" || 'No' || 'no'){
+    while(agreeToChange === 'Y' || "yes" || 'Yes' || 'y'){
         type = rndArray(typeArray)
         agreeToChange = prompt('Your choice of ' + item + ' has been saved. Would you like to change your choice?' )
     }

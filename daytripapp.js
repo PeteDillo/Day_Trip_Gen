@@ -15,7 +15,10 @@ changeYesNo = prompt("Your destination is "+ destination + ". You'll get there v
 
 
 if(changeYesNo === 'Y' || "yes" || 'Yes' || 'y'){
-    let desAgree = agreeCheck(prompt("Do you want to change your destination?"), destination, desArray, )
+    let desAgree = agreeCheck(prompt("Do you want to change your destination?"), destination,)
+    if (desAgree === 'Y' || "yes" || 'Yes' || 'y' ){
+        reSelector(destination,desArray)
+    }
 
 }
 //if else(changeYesNo ==="N" || "n" || 'No' || 'no'){}
@@ -23,8 +26,7 @@ if(changeYesNo === 'Y' || "yes" || 'Yes' || 'y'){
 
 
 
-//  End Confirmation Alert
-alert("Your order for "+ destination + " via " + transport + ", dinning in at a " + restaurant + ' restaurant. and a ' + entertainment + ' is complete. Have a nice day!')
+
 
 // function for random array
 function rndArray(Array){
@@ -32,24 +34,27 @@ function rndArray(Array){
     return Array[randomNumber]
 }
 //function to check if we like the random item
-function agreeCheck(item, array, type){
-    agree = prompt("Do you want to change " + item + "?")
+function agreeCheck(agree, item){
+    agree = prompt("Do you want to change  " + item + "?")
     if(agree ==='Y' || "yes" || 'Yes' || 'y' ){   
-        return agree
+        return agree;
     }
-    if else(agree !== 'Y' || "yes" || 'Yes' || 'y' || 'No' || 'no' || 'n'|| 'N'){
+ /*   if else(agree !== 'Y' || "yes" || 'Yes' || 'y' || 'No' || 'no' || 'n'|| 'N'){           code i can't decide to use or not
         alert('Restart input not undersooned')
     }
     if else( agree === 'No' || 'no' || 'n'|| 'N' ){
         console.log(item + ' has been saved.')
-    }
+    }*/
 }
 // function to run reselector 
-function reSelector(item, type, typeArray){
+function reSelector(item, typeArray){
     let agreeToChange = "Y"
     while(agreeToChange === 'Y' || "yes" || 'Yes' || 'y'){
-        type = rndArray(typeArray)
+        rndArray(typeArray)
         agreeToChange = prompt('Your choice of ' + item + ' has been saved. Would you like to change your choice?' )
     }
     return item
 }
+
+//  End Confirmation Alert
+alert("Your order for "+ destination + " via " + transport + ", dinning in at a " + restaurant + ' restaurant. and a ' + entertainment + ' is complete. Have a nice day!')

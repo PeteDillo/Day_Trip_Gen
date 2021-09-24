@@ -11,18 +11,22 @@ restaurant = rndArray(resArray)
 transport = rndArray(transArray)
 entertainment = rndArray(enteArray)
 
-changeYesNo = prompt("Your destination is "+ destination + ". You'll get there via " + transport + ". Eating a wonderful local " + restaurant + ' restaurant. After that a night enjoyinging a ' + entertainment + '. Do you want to change anything?')
 
+start()
 
 if(changeYesNo ==='y' || changeYesNo === 'Y' ||changeYesNo === "yes" || changeYesNo === 'Yes'){
     let desAgree = agreeCheck(prompt("Do you want to change " + destination + "?"), destination, desArray)   
     let transAgree = agreeCheck(prompt("Do you want to change " + transport + "?"), transport, transArray)
     let resAgree = agreeCheck(prompt("Do you want to change " + restaurant + "?"), restaurant, resArray)
     let enteAgree = agreeCheck(prompt("Do you want to change " + entertainment + "?"), entertainment, enteArray)
+    changeYesNo = "n"
 }
-
-
-//if else(changeYesNo === "N" || === "n" || === 'No' || ==='no'){}
+else if (changeYesNo === "N" || changeYesNo === "n" || changeYesNo === 'No' || changeYesNo ==='no'){
+    end()
+}
+else{
+alert('Error invaild Please insert either Yes or No. RESTARTING')
+}
 
 
 // function for random array
@@ -41,7 +45,7 @@ function agreeCheck(agree, item, typeArray){
 function reSelector(item, typeArray){
     let agreeToChange = 'y'
 
-    if (agreeToChange ==='y' || agreeToChange === 'Y' ||agreeToChange === "yes" || agreeToChange === 'Yes' ){
+    if (agreeToChange === 'y' || agreeToChange === 'Y' ||agreeToChange === "yes" || agreeToChange === 'Yes' ){
         item = rndArray(typeArray)
         agreeToChange = 'n'
         agreeToChange = prompt('Your choice of ' + item + ' has been saved. Would you like to change your choice?' )
@@ -56,9 +60,14 @@ function reSelector(item, typeArray){
         return item
 }
     else{
-    alert('Error invaild Please insert either Yes or No restarting')
+    alert('Error invaild Please insert either Yes or No RESTARTING')
     reSelector(item, typeArray)
 }
 }
-//  End Confirmation Alert
-alert("Your order for "+ destination + " via " + transport + ", dinning in at a " + restaurant + ' restaurant. and a ' + entertainment + ' is complete. Have a nice day!')
+// Start of program
+function start(){
+    changeYesNo = prompt("Your destination is "+ destination + ". You'll get there via " + transport + ". Eating a wonderful local " + restaurant + ' restaurant. After that a night enjoyinging a ' + entertainment + '. Do you want to change anything?')
+}
+//  End Confirmation Alert function
+function end(){
+alert("Your order for "+ destination + " via " + transport + ", dinning in at a " + restaurant + ' restaurant. and a ' + entertainment + ' is complete. Have a nice day!')}

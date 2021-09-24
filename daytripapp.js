@@ -24,10 +24,6 @@ if(changeYesNo === 'Y' || "yes" || 'Yes' || 'y'){
 //if else(changeYesNo ==="N" || "n" || 'No' || 'no'){}
 
 
-
-
-
-
 // function for random array
 function rndArray(Array){
     let randomNumber =  Math.floor(Math.random() * Array.length)
@@ -39,21 +35,22 @@ function agreeCheck(agree, item){
     if(agree ==='Y' || "yes" || 'Yes' || 'y' ){   
         return agree;
     }
- /*   if else(agree !== 'Y' || "yes" || 'Yes' || 'y' || 'No' || 'no' || 'n'|| 'N'){           code i can't decide to use or not
-        alert('Restart input not undersooned')
-    }
-    if else( agree === 'No' || 'no' || 'n'|| 'N' ){
-        console.log(item + ' has been saved.')
-    }*/
+
 }
 // function to run reselector 
-function reSelector(item, typeArray){
+function reSelector(item, typeArray)
     let agreeToChange = "Y"
-    while(agreeToChange === 'Y' || "yes" || 'Yes' || 'y'){
+    if(agreeToChange === 'Y' || "yes" || 'Yes' || 'y'){
         rndArray(typeArray)
         agreeToChange = prompt('Your choice of ' + item + ' has been saved. Would you like to change your choice?' )
+        return agreeToChange;
     }
-    return item
+    else if (agree ==='No' || 'no' || 'n'|| 'N'){
+        return
+}
+    else{
+    alert('Error invaild Please insert either Yes or No restarting')
+    reSelector(item, typeArray)
 }
 
 //  End Confirmation Alert
